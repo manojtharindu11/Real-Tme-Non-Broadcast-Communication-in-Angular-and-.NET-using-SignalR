@@ -1,0 +1,15 @@
+<div>
+  <h1>{{currentUser}} </h1>
+  <input [(ngModel)]="currentMessage" placeholder="Enter your message">
+  <select [(ngModel)]="selectedUser">
+    <option *ngFor="let user of getFilteredUsers()" [value]="user">{{user}}</option>
+  </select>
+  <button (click)="sendMessage()">Send</button>
+</div>
+
+<br><br>
+
+
+<div *ngFor="let msg of chatMessages">
+  {{ msg.user }} : {{msg.message}}
+</div>
